@@ -1,13 +1,27 @@
 const container = document.getElementById("container");
+const button = document.getElementById("button");
 let rows = document.getElementsByClassName("row-div");
 let columns = document.getElementsByClassName("column-div");
 
-addRows(16, container);
-addColumns(16);
+newGame(16);
 
-container.addEventListener('mouseover', (event) => {
-        event.target.style['background-color'] = "blue";
-    })
+function newGame(numRows) {
+    container.textContent = '';
+
+    addRows(numRows, container);
+    addColumns(numRows);
+
+        for (let i=0; i<columns.length; i++) {
+            columns[i].addEventListener('mouseover', (event) => {
+                event.target.style['background-color'] = "blue";
+            })
+        }
+}
+
+button.addEventListener('click', () => {
+    newRows = prompt("Enter number of rows for new grid");
+    newGame(newRows);
+})
 
 function addRows(rows=16, container=container) {
     for (let i = 0; i < rows; i++) {

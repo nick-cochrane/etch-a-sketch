@@ -3,6 +3,10 @@
     background-color: lightgrey;
 }
 
+button {
+    margin-bottom: 10px;
+}
+
 .row-div {
     display: flex;
     flex-direction: row;
@@ -11,7 +15,7 @@
 }
 
 .column-div {
-    height: 30px;
+    height: 40px;
     width: 50px;
     border: 1.1px solid black;
 }
